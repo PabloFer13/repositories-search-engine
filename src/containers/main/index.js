@@ -1,11 +1,8 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { Wrap } from './index.style';
+import Home from '../Home';
 
-const App = () => (
-    <Wrap>
-        <Text>Hello, dude!</Text>
-    </Wrap>
-);
+const App = () => <Home />;
 
 export default App;

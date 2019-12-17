@@ -4,10 +4,9 @@ import api from '../../services/api';
 
 function* getListSaga({ payload }) {
     try {
-        const res = yield call(api.repository.list, payload);
-        console.log('====================================');
-        console.log('items: ', res);
-        console.log('====================================');
+        const {
+            data: { items },
+        } = yield call(api.repository.list, payload);
     } catch (err) {
         console.log('err: ', err);
     }

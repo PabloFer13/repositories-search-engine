@@ -5,11 +5,14 @@ import dispatcher from './dispatcher';
 // import selectors from './selectors';
 import SearchBar from '../../components/SearchBar';
 import RepoList from '../../components/RepoList';
+import { Wrap } from './index.style';
 
 const App = props => {
     return (
         <View>
-            <SearchBar {...props} />
+            <Wrap>
+                <SearchBar {...props} />
+            </Wrap>
             <RepoList />
         </View>
     );

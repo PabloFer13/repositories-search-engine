@@ -2,8 +2,8 @@ import createActions from '../../services/createActions';
 
 const prefix = '@repositories_search_engine/app';
 
-const types = ['GET_LIST'];
+const types = ['GET_LIST', 'SET_LIST'];
 
-const { getList } = createActions(prefix, types);
+const { getList, setList } = createActions(prefix, types);
 
-export default { getList };
+export default { getList, setList };

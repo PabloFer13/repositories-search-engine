@@ -7,6 +7,7 @@ function* getListSaga({ payload }) {
         const {
             data: { items },
         } = yield call(api.repository.list, payload);
+        yield put(actions.setList(items));
     } catch (err) {
         console.log('err: ', err);
     }

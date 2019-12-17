@@ -13,7 +13,7 @@ axios.interceptors.response.use(
     },
 );
 
-const get = (url, params = {}) => axios.get(url, { params });
+const { get } = axios;
 
 export default {
     repository: {

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import app from './Home/reducer';
 
-export default (createRootReducer = () =>
+export default createRootReducer = () =>
     combineReducers({
         app,
-    }));
+    });

@@ -6,7 +6,6 @@ class RepoDetail extends Component {
         super(props);
 
         this.state = {
-            isOpen: false,
             description: 'repo.description.name',
             author: 'repo.author',
             license: 'repo.author.licence',
@@ -17,39 +16,29 @@ class RepoDetail extends Component {
         };
     }
 
-    handleIsOpen(isOpen) {
-        this.setState({ isOpen });
-    }
-
     render() {
         const {
-            isOpen,
-            description,
-            author,
-            license,
-            language,
-            createdAt,
-            status,
-            openIssues,
-        } = this.state;
+            state: {
+                description,
+                author,
+                license,
+                language,
+                createdAt,
+                status,
+                openIssues,
+            },
+            props: { isOpen, handleIsOpen },
+        } = this;
         return (
             <>
-                <TouchableHighlight
-                    onPress={() => {
-                        this.handleIsOpen(true);
-                    }}>
-                    <Text>Show Modal</Text>
-                </TouchableHighlight>
                 <Modal
                     animationType="slide"
                     transparent={false}
-                    visible={this.state.isOpen}>
+                    visible={isOpen}>
                     <View style={{ marginTop: 22 }}>
                         <View>
                             <TouchableHighlight
-                                onPress={() => {
-                                    this.handleIsOpen(!isOpen);
-                                }}>
+                                onPress={() => handleIsOpen(!isOpen)}>
                                 <Text>Hide Modal</Text>
                             </TouchableHighlight>
                             <View>

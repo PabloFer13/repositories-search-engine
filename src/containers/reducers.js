@@ -1,11 +1,7 @@
 import { combineReducers } from 'redux';
-// import { connectRouter } from 'connected-react-router';
-import app from './main/reducer';
+import app from './Home/reducer';
 
-const createRootReducer = () =>
+export default (createRootReducer = () =>
     combineReducers({
         app,
-        // router: connectRouter(history),
-    });
-
-export default createRootReducer;
+    }));
